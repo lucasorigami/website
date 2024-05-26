@@ -3,7 +3,7 @@ const playButton = document.getElementById('playbutton');
 const playImage = playButton.querySelector('img');
 const main = document.getElementById("main");
 const headphones = document.getElementById("headphones");
-
+const loading = document.getElementById("loading");
 // console.log(preloadedImages);
 // main.classList.add("animate");
 
@@ -26,16 +26,19 @@ const preloadedImages = images.map(url => {
 });
 
 
-
+setTimeout(() => {
+    loading.style.display = "none";
+}, 13500);
 
 
 playButton.addEventListener("click", onPlay);
 
 function onPlay() {
-    main.classList.remove("animate")
     main.classList.add("animateback");
+    main.classList.remove("animate")
     headphones.style.opacity = "0";
-    
+    loading.style.display = "none";
+
     audio.play();
     // main.style.opacity = 0;
     // main.classList.remove("animate");
@@ -44,7 +47,10 @@ function onPlay() {
     // }, 400); 
 
     // main.style.animation = "forwards 2s slideback;"
+    setTimeout(() => {
+        main.style.display = "none";
 
+    }, 4000);
 
     setTimeout(() => {
         playImage.src = preloadedImages[0].src;

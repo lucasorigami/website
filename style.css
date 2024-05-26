@@ -44,6 +44,32 @@ p {
     color: #345a3a;
 }
 
+.white {
+    color: #E8E9EB
+}
+
+#loading {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 65px;
+    left: 0;
+    right: 0;
+    text-align: center; 
+    animation: 1.5s forwards ease-in-out 12s intro;
+    overflow: hidden;
+    display: block;
+    background-color: #345a3a;
+}
+
+#loading img {
+    border-radius: 10px;
+    margin: 10px;
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+}
+
 #main {
     max-width: 400px;
     background-color: #E8E9EB;
@@ -53,11 +79,11 @@ p {
     opacity: 1;
     height: auto;
     overflow: hidden;
+    transform: translateY(110vh)
 }
 
 .animate {
-    animation: forwards 2s slide;
-
+    animation: 2s forwards 12s slide;
 }
 
 .animateback {
@@ -69,22 +95,25 @@ p {
     opacity: 1;
 }
 
-@keyframes slide {
-    0% {transform: translateY(110vh)};
-    100% {transform: translateY(0vh)};
-}
-
-@keyframes slideback {
-    100% {transform: translateY(110vh)};
-}
-
-
-
 #playbutton {
     display: block;
     width: 80vw;
+    max-width: 500px;
     height: auto;
 }
+@keyframes slide {
+    /* 0% {transform: translateY(110vh)}; */
+    100% {transform: translateY(0vh)};
+}
+@keyframes intro {
+    100% {transform: translateY(50vh);};
+}
+@keyframes slideback {
+    0% {transform: translateY(0vh);};
+    100% {transform: translateY(110vh);};
+}
+
+
 
 #playbutton img {
     width: 100%;
@@ -95,8 +124,10 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: bottom;
+    /* justify-content: end; */
     gap: 20px;
+    height: 100vh;
+    overflow: hidden;
 
 }
 
